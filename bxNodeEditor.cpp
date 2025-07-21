@@ -1,5 +1,6 @@
 #include "bxNodeEditor.h"
 #include <iostream>
+#include "ui/windows/NodeEditorWindow.h"
 
 bxNodeEditor::bxNodeEditor()
 	: blot::AddonBase("bxNodeEditor", "0.1.0"), m_initialized(false),
@@ -16,6 +17,12 @@ bool bxNodeEditor::init() {
 
 	// Initialize addon-specific resources
 	m_initialized = true;
+
+	// Create and register the Node Editor window
+	if (auto mui = dynamic_cast<Mui *>(engine->getUIManager())) {
+	    auto wnd = std::make_shared<blot::NodeEditorWindow>("Node Editor");
+	    mui->getWindowManager()->createWindow("NodeEditor", wnd);
+	}
 
 	this->log("bxNodeEditor addon initialized successfully");
 	return true;
