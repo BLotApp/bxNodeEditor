@@ -9,7 +9,7 @@ file(GLOB NODE_EDITOR_SRC CONFIGURE_DEPENDS
     third_party/imgui-node-editor/*.cpp
 )
 
-file(GLOB NODE_WINDOW_SRC ui/windows/NodeEditorWindow.cpp)
+file(GLOB NODE_WINDOW_SRC windows/NodeEditorWindow.cpp)
 
 include(${CMAKE_SOURCE_DIR}/cmake/CPM.cmake)
 
@@ -33,7 +33,7 @@ target_link_libraries(${ADDON_NAME} PUBLIC blot bxImGui)
 target_include_directories(${ADDON_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/third_party/imgui-node-editor>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/ui/windows>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/windows>
 )
 
 message(STATUS "Configured addon: ${ADDON_NAME} (with imgui-node-editor)") 
