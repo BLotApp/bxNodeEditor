@@ -20,21 +20,17 @@ bool bxNodeEditor::init() {
 
 	// Create and register the Node Editor window
 	if (auto mui = dynamic_cast<Mui *>(engine->getUIManager())) {
-	    auto wnd = std::make_shared<blot::NodeEditorWindow>("Node Editor");
-	    mui->getWindowManager()->createWindow("NodeEditor", wnd);
+		auto wnd = std::make_shared<blot::NodeEditorWindow>("Node Editor");
+		mui->getWindowManager()->createWindow("NodeEditor", wnd);
 	}
 
 	this->log("bxNodeEditor addon initialized successfully");
 	return true;
 }
 
-void bxNodeEditor::setup() {
-	this->log("Setting up bxNodeEditor addon");
-}
+void bxNodeEditor::setup() { this->log("Setting up bxNodeEditor addon"); }
 
-void bxNodeEditor::update(float deltaTime) {
-	m_time += deltaTime;
-}
+void bxNodeEditor::update(float deltaTime) { m_time += deltaTime; }
 
 void bxNodeEditor::draw() {
 	// Draw addon-specific UI or graphics
@@ -47,4 +43,3 @@ void bxNodeEditor::cleanup() {
 		m_initialized = false;
 	}
 }
-

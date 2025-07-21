@@ -1,8 +1,8 @@
 #pragma once
-#include "core/AddonBase.h"
 #include <functional>
 #include <string>
 #include <unordered_map>
+#include "core/AddonBase.h"
 
 class bxNodeEditor : public blot::AddonBase {
   public:
@@ -14,9 +14,8 @@ class bxNodeEditor : public blot::AddonBase {
 	void update(float deltaTime);
 	void draw();
 	void cleanup();
- 
+
   private:
 	bool m_initialized;
 	float m_time;
-
 };
