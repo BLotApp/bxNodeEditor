@@ -1,6 +1,6 @@
 #include "bxNodeEditor.h"
 #include <iostream>
-#include "ui/windows/NodeEditorWindow.h"
+#include "windows/NodeEditorWindow.h"
 
 bxNodeEditor::bxNodeEditor()
 	: blot::AddonBase("bxNodeEditor", "0.1.0"), m_initialized(false),

@@ -2,6 +2,7 @@
 #include "core/U_core.h"
 #include "bxImGui.h"
 #include "bxNodeEditor.h"
+#include "windows/NodeEditorWindow.h"
 
 class ExampleEditorApp : public blot::IApp {
 public:
